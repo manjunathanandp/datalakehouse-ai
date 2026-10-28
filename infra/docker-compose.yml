@@ -1,0 +1,85 @@
+services:
+  # 1. Object Storage Layer
+  minio:
+    image: cgr.dev/chainguard/minio:latest
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    environment:
+      MINIO_ROOT_USER: admin
+      MINIO_ROOT_PASSWORD: password123
+    command: server /data --console-address ":9001"
+
+  minio-init:
+    image: amazon/aws-cli:latest
+    depends_on:
+      - minio
+    environment:
+      AWS_ACCESS_KEY_ID: admin
+      AWS_SECRET_ACCESS_KEY: password123
+      AWS_DEFAULT_REGION: us-east-1
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        until aws s3api head-bucket --bucket warehouse --endpoint-url http://minio:9000 >/dev/null 2>&1 ||
+              aws s3api create-bucket --bucket warehouse --endpoint-url http://minio:9000; do
+          sleep 2
+        done
+
+  # 2. Database Backend for Iceberg and OpenMetadata
+  postgres:
+    image: postgres:15
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: lakehouse_user
+      POSTGRES_PASSWORD: password123
+      POSTGRES_DB: metadata_db
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  # 3. Apache Iceberg REST Catalog
+  iceberg-catalog:
+    image: apache/iceberg-rest-fixture:latest
+    ports:
+      - "8182:8181"
+    environment:
+      AWS_REGION: us-east-1
+      CATALOG_WAREHOUSE: s3a://warehouse/
+      CATALOG_IO__IMPL: org.apache.iceberg.aws.s3.S3FileIO
+      CATALOG_S3_ENDPOINT: http://minio:9000
+      CATALOG_S3_PATH__STYLE__ACCESS: "true"
+      CATALOG_S3_ACCESS__KEY__ID: admin
+      CATALOG_S3_SECRET__ACCESS__KEY: password123
+      CATALOG_JDBC_URI: jdbc:postgresql://postgres:5432/metadata_db
+      CATALOG_JDBC_USER: lakehouse_user
+      CATALOG_JDBC_PASSWORD: password123
+    depends_on:
+      minio:
+        condition: service_started
+      minio-init:
+        condition: service_completed_successfully
+      postgres:
+        condition: service_started
+
+  # 4. Open Policy Agent (OPA)
+  opa:
+    image: openpolicyagent/opa:latest
+    ports:
+      - "8181:8181"
+    volumes:
+      - ./opa:/policies:ro
+    command: run --server --addr 0.0.0.0:8181 --log-level=info /policies
+
+
+  # 5. Graph Engine for Knowledge Representation
+  neo4j:
+    image: neo4j:community
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    environment:
+      NEO4J_AUTH: neo4j/password123
+
+volumes:
+  pgdata:

@@ -1,0 +1,54 @@
+{
+  "description": "Semantic definitions for curated customer metrics and transaction-level analysis.",
+  "dimensions": [
+    {"name": "customer", "type": "string", "physical_column": "customer_id"},
+    {"name": "customer_name", "type": "string", "physical_column": "customer_name"},
+    {"name": "parent_company", "type": "string", "physical_column": "parent_company"},
+    {"name": "risk_level", "type": "string", "physical_column": "risk_level"},
+    {"name": "transaction_date", "type": "date", "physical_column": "transaction_date"},
+    {"name": "status", "type": "string", "physical_column": "status"}
+  ],
+  "measures": [
+    {
+      "name": "total_spend",
+      "dataset": "demo_gold.customer_metrics",
+      "physical_column": "total_spend",
+      "aggregation": "sum",
+      "description": "Total transaction amount in the selected customer scope.",
+      "synonyms": ["total spend", "spend", "financial exposure", "operational exposure"]
+    },
+    {
+      "name": "flagged_volume",
+      "dataset": "demo_gold.customer_metrics",
+      "physical_column": "flagged_volume",
+      "aggregation": "sum",
+      "description": "Transaction amount flagged for security review.",
+      "synonyms": ["flagged amount", "high risk volume", "flagged volume"]
+    },
+    {
+      "name": "transaction_count",
+      "dataset": "demo_gold.customer_metrics",
+      "physical_column": "transaction_count",
+      "aggregation": "sum",
+      "description": "Number of transactions in the selected customer scope.",
+      "synonyms": ["number of transactions", "transaction count", "transactions"]
+    },
+    {
+      "name": "average_amount",
+      "dataset": "demo_gold.customer_metrics",
+      "physical_column": "average_amount",
+      "aggregation": "weighted_average",
+      "description": "Average amount per transaction in the selected customer scope.",
+      "synonyms": ["average transaction", "average amount", "average spend"]
+    },
+    {
+      "name": "pending_amount",
+      "dataset": "demo_silver.transactions",
+      "physical_column": "amount",
+      "aggregation": "sum",
+      "filters": {"status": "PENDING"},
+      "description": "Sum of pending transaction amounts, optionally filtered by date and grouped by customer.",
+      "synonyms": ["pending amount", "pending spend", "amount pending", "pending transactions"]
+    }
+  ]
+}

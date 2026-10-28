@@ -1,0 +1,13 @@
+# Data Wrangling and Core Acceleration
+pandas>=2.0.0
+pyarrow>=14.0.0
+
+# Apache Iceberg & Storage Interoperability
+pyiceberg[s3fs,hive]>=0.6.0
+
+# Database and Graph Connectivity
+neo4j>=5.15.0
+requests>=2.31.0
+
+# AI/LLM Integration (for future expansion)
+openai>=1.0.0

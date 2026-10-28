@@ -1,0 +1,85 @@
+transaction_id,customer_id,customer_name,parent_company,amount,status,transaction_date,region
+1,CUST_01,Northwind Traders,Northwind Group,3206.15,SETTLED,2026-01-13,West
+2,CUST_01,Northwind Traders,Northwind Group,3714.21,SETTLED,2026-05-06,West
+3,CUST_01,Northwind Traders,Northwind Group,1135.47,SETTLED,2026-02-22,West
+4,CUST_01,Northwind Traders,Northwind Group,3391.58,PENDING,2026-02-14,West
+5,CUST_01,Northwind Traders,Northwind Group,2962.7,SETTLED,2026-01-17,West
+6,CUST_01,Northwind Traders,Northwind Group,173.24,FLAGGED,2026-04-22,West
+7,CUST_01,Northwind Traders,Northwind Group,1182.49,SETTLED,2026-01-14,West
+8,CUST_01,Northwind Traders,Northwind Group,2817.19,SETTLED,2026-08-03,West
+9,CUST_01,Northwind Traders,Northwind Group,1121.69,PENDING,2026-05-23,West
+10,CUST_01,Northwind Traders,Northwind Group,4051.92,SETTLED,2026-01-04,West
+11,CUST_01,Northwind Traders,Northwind Group,3800.07,SETTLED,2026-03-23,West
+12,CUST_01,Northwind Traders,Northwind Group,3498.24,SETTLED,2026-06-24,West
+13,CUST_02,Contoso Retail,Contoso Group,1407.41,SETTLED,2026-04-21,East
+14,CUST_02,Contoso Retail,Contoso Group,4787.14,SETTLED,2026-06-22,East
+15,CUST_02,Contoso Retail,Contoso Group,533.5,SETTLED,2026-07-14,East
+16,CUST_02,Contoso Retail,Contoso Group,506.16,PENDING,2026-06-26,East
+17,CUST_02,Contoso Retail,Contoso Group,3028.54,SETTLED,2026-01-23,East
+18,CUST_02,Contoso Retail,Contoso Group,3655.42,FLAGGED,2026-03-05,East
+19,CUST_02,Contoso Retail,Contoso Group,4866.25,SETTLED,2026-07-13,East
+20,CUST_02,Contoso Retail,Contoso Group,417.03,SETTLED,2026-05-31,East
+21,CUST_02,Contoso Retail,Contoso Group,4151.29,PENDING,2026-07-05,East
+22,CUST_02,Contoso Retail,Contoso Group,2897.33,SETTLED,2026-02-05,East
+23,CUST_02,Contoso Retail,Contoso Group,252.98,SETTLED,2026-04-27,East
+24,CUST_02,Contoso Retail,Contoso Group,3871.01,SETTLED,2026-02-10,East
+25,CUST_03,Fabrikam Services,Fabrikam Group,4280.21,SETTLED,2026-02-21,Central
+26,CUST_03,Fabrikam Services,Fabrikam Group,1916.13,SETTLED,2026-08-21,Central
+27,CUST_03,Fabrikam Services,Fabrikam Group,3187.53,SETTLED,2026-07-06,Central
+28,CUST_03,Fabrikam Services,Fabrikam Group,834.2,PENDING,2026-07-01,Central
+29,CUST_03,Fabrikam Services,Fabrikam Group,1067.3,SETTLED,2026-05-17,Central
+30,CUST_03,Fabrikam Services,Fabrikam Group,3516.56,FLAGGED,2026-02-06,Central
+31,CUST_03,Fabrikam Services,Fabrikam Group,3055.43,SETTLED,2026-03-29,Central
+32,CUST_03,Fabrikam Services,Fabrikam Group,2682.35,SETTLED,2026-05-06,Central
+33,CUST_03,Fabrikam Services,Fabrikam Group,837.93,PENDING,2026-07-14,Central
+34,CUST_03,Fabrikam Services,Fabrikam Group,1367.99,SETTLED,2026-04-23,Central
+35,CUST_03,Fabrikam Services,Fabrikam Group,3430.96,SETTLED,2026-01-29,Central
+36,CUST_03,Fabrikam Services,Fabrikam Group,1164.51,SETTLED,2026-01-17,Central
+37,CUST_04,Adventure Works,Adventure Group,4030.1,SETTLED,2026-07-25,West
+38,CUST_04,Adventure Works,Adventure Group,1357.01,SETTLED,2026-04-19,West
+39,CUST_04,Adventure Works,Adventure Group,4567.85,SETTLED,2026-06-11,West
+40,CUST_04,Adventure Works,Adventure Group,1082.82,PENDING,2026-09-13,West
+41,CUST_04,Adventure Works,Adventure Group,1993.27,SETTLED,2026-08-23,West
+42,CUST_04,Adventure Works,Adventure Group,735.79,FLAGGED,2026-03-13,West
+43,CUST_04,Adventure Works,Adventure Group,1251.97,SETTLED,2026-05-15,West
+44,CUST_04,Adventure Works,Adventure Group,3741.39,SETTLED,2026-08-08,West
+45,CUST_04,Adventure Works,Adventure Group,4491.67,PENDING,2026-07-24,West
+46,CUST_04,Adventure Works,Adventure Group,1825.93,SETTLED,2026-03-12,West
+47,CUST_04,Adventure Works,Adventure Group,2559.89,SETTLED,2026-02-16,West
+48,CUST_04,Adventure Works,Adventure Group,3785.02,SETTLED,2026-02-26,West
+49,CUST_05,Wide World Importers,World Imports,785.39,SETTLED,2026-03-23,East
+50,CUST_05,Wide World Importers,World Imports,3965.59,SETTLED,2026-08-05,East
+51,CUST_05,Wide World Importers,World Imports,2992.13,SETTLED,2026-07-17,East
+52,CUST_05,Wide World Importers,World Imports,1923.56,PENDING,2026-08-28,East
+53,CUST_05,Wide World Importers,World Imports,2657.34,SETTLED,2026-01-06,East
+54,CUST_05,Wide World Importers,World Imports,3409.41,FLAGGED,2026-02-28,East
+55,CUST_05,Wide World Importers,World Imports,3416.51,SETTLED,2026-05-17,East
+56,CUST_05,Wide World Importers,World Imports,3848.78,SETTLED,2026-06-24,East
+57,CUST_05,Wide World Importers,World Imports,579.97,PENDING,2026-08-11,East
+58,CUST_05,Wide World Importers,World Imports,811.83,SETTLED,2026-01-02,East
+59,CUST_05,Wide World Importers,World Imports,4770.23,SETTLED,2026-05-15,East
+60,CUST_05,Wide World Importers,World Imports,4860.14,SETTLED,2026-04-02,East
+61,CUST_06,Tailspin Toys,Tailspin Group,2550.72,SETTLED,2026-02-24,Central
+62,CUST_06,Tailspin Toys,Tailspin Group,4355.83,SETTLED,2026-06-02,Central
+63,CUST_06,Tailspin Toys,Tailspin Group,4212.31,SETTLED,2026-09-17,Central
+64,CUST_06,Tailspin Toys,Tailspin Group,3054.63,PENDING,2026-03-20,Central
+65,CUST_06,Tailspin Toys,Tailspin Group,1885.22,SETTLED,2026-03-24,Central
+66,CUST_06,Tailspin Toys,Tailspin Group,2708.41,FLAGGED,2026-01-01,Central
+67,CUST_06,Tailspin Toys,Tailspin Group,3004.75,SETTLED,2026-09-08,Central
+68,CUST_06,Tailspin Toys,Tailspin Group,121.9,SETTLED,2026-07-05,Central
+69,CUST_06,Tailspin Toys,Tailspin Group,4396.64,PENDING,2026-06-07,Central
+70,CUST_06,Tailspin Toys,Tailspin Group,1216.28,SETTLED,2026-05-04,Central
+71,CUST_06,Tailspin Toys,Tailspin Group,4393.1,SETTLED,2026-02-10,Central
+72,CUST_06,Tailspin Toys,Tailspin Group,451.13,SETTLED,2026-09-06,Central
+73,CUST_99,Alpha Corp,MegaConglomerate Inc,4084.72,FLAGGED,2026-03-06,North
+74,CUST_99,Alpha Corp,MegaConglomerate Inc,663.75,SETTLED,2026-09-01,North
+75,CUST_99,Alpha Corp,MegaConglomerate Inc,4735.57,FLAGGED,2026-03-26,North
+76,CUST_99,Alpha Corp,MegaConglomerate Inc,1343.66,PENDING,2026-08-05,North
+77,CUST_99,Alpha Corp,MegaConglomerate Inc,4822.71,FLAGGED,2026-04-13,North
+78,CUST_99,Alpha Corp,MegaConglomerate Inc,3571.92,FLAGGED,2026-07-24,North
+79,CUST_99,Alpha Corp,MegaConglomerate Inc,4975.87,FLAGGED,2026-07-11,North
+80,CUST_99,Alpha Corp,MegaConglomerate Inc,2204.55,SETTLED,2026-09-22,North
+81,CUST_99,Alpha Corp,MegaConglomerate Inc,2271.14,FLAGGED,2026-05-07,North
+82,CUST_99,Alpha Corp,MegaConglomerate Inc,1142.87,SETTLED,2026-06-23,North
+83,CUST_99,Alpha Corp,MegaConglomerate Inc,129.65,FLAGGED,2026-04-28,North
+84,CUST_99,Alpha Corp,MegaConglomerate Inc,2952.49,SETTLED,2026-01-04,North
